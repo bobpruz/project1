@@ -4,15 +4,95 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project 1</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Get Your Day Started</title>
 
+  <!-- bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+  <!-- google fonts link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap" rel="stylesheet">
+
+  <!-- css file -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-  <main>
-    
+  <main class="container">
+    <div id="header-card" class="d-flex justify-content-center">
+      <h1>Get Your Day Started Right</h1>
+    </div>
+
+    <div class="row">
+      <!-- static quote card -->
+      <aside id="static-quote-container" class="col-4">
+        <div id="static-quote-card" class="card card-border-2 border-dark">
+          <h3 class="card-header">Static Quote</h3>
+          <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus repudiandae quod error itaque, repellendus tempora omnis possimus officiis unde nam maxime temporibus ipsum dolorem nobis? Nisi voluptatem minus eligendi illum.</p>
+
+          <img src="./assets/images/WireFrame.png" class="card-img-bottom" alt="">
+        </div>
+      </aside>
+
+      <!-- daily quote section -->
+      <section id="daily-quote-container" class="col-8">
+        <div id="daily-quote-card" class="card card-border-2 border-dark">
+          <h2 class="card-header">Daily Quote</h2>
+          <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium fugit neque accusantium sit mollitia amet nihil tenetur, non vitae atque culpa dolor dicta voluptatem quibusdam exercitationem tempore. Eos, est fugit?</p>
+
+          <p class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam itaque amet accusamus, eius, atque nam dolor adipisci neque fugit iure laboriosam repellat. Temporibus, repudiandae. Dicta facilis ad at repellendus eos.</p>
+
+          <!-- refresh button -->
+          <div class="d-flex justify-content-center">
+            <button id="refreshBtn" class="btn btn-warning border-dark">Not Feeling Inspired Enough? Click for More</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- spotify player section -->
+      <section id="spotify-player-container" class="col-12">
+        <div id="spotify-player-card" class="card card-border-2 border-dark">
+          <h2 class="card-header">What's Your Song of the Day?</h2>
+
+          <!-- genres/playlists dropdown menus -->
+          <div class="d-flex d-inline">
+            <div class="btn-group card-body col-2">
+              <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Genres
+              </button>
+              <div id="genres-menu" class="dropdown-menu">
+                <a class="dropdown-item" href="#">Genre 1</a>
+                <a class="dropdown-item" href="#">Genre 2</a>
+                <a class="dropdown-item" href="#">Genre 3</a>
+                <a class="dropdown-item" href="#">Genre 4</a>
+                <a class="dropdown-item" href="#">Genre 5</a>
+                <a class="dropdown-item" href="#">Genre 6</a>
+              </div>
+            </div>
+
+            <div class="btn-group card-body col-2">
+              <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Playlists
+              </button>
+              <div id="genres-menu" class="dropdown-menu">
+                <a class="dropdown-item" href="#">Playlist 1</a>
+                <a class="dropdown-item" href="#">Playlist 2</a>
+                <a class="dropdown-item" href="#">Playlist 3</a>
+                <a class="dropdown-item" href="#">Playlist 4</a>
+                <a class="dropdown-item" href="#">Playlist 5</a>
+                <a class="dropdown-item" href="#">Playlist 6</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
-<script src="./assets/js/script.js"></script>
+
+  <!-- jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+  <!-- JS file -->
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
