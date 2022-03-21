@@ -1,0 +1,35 @@
+.root {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.card-body {
+  text-align: center;
+}
+
+/* static quote card styling */
+#static-quote-container {
+  margin-top: 10.5vh;
+  /* margin-left: -10vw; */
+}
+
+/* daily quote card styling */
+#daily-quote-container {
+  margin-top: 10.5vh;
+}
+
+#refreshBtn {
+  margin-bottom: 2vh;
+}
+
+/* spotify player card styling */
+#spotify-player-container {
+  margin-top: 2vh;
+}
