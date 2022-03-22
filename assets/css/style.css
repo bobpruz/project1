@@ -35,8 +35,7 @@ body {
 }
 
 /* twitter button styling */
-.twitter
-{
+.twitter {
     border:1px solid rgb(102, 179, 255);
     border-radius: 4px;
     background-color: rgb(102, 179, 255);
@@ -46,4 +45,30 @@ body {
     width: 60px;
     height: 35px;
     line-height: 40px;
+}
+
+.fa-quote-left, .fa-quote-right {
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+}
+
+.quote {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.author {
+    margin:10px;
+    text-align: right;
+    font-size: 25px;
+    font-style: italic;
+    font-family: cursive;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
