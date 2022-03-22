@@ -73,3 +73,7 @@ const getNewQuote = async () =>
     tweetButton.href="https://twitter.com/intent/tweet?text="+quote+" ~ "+auth;
 }
 getNewQuote();
+
+var song = "2up3OPMp9Tb4dAKM2erWXQ";
+
+$("#spotify").attr("src", "https://open.spotify.com/embed/album/" + song);
