@@ -3,6 +3,19 @@
 var clientId = '24be7e6be3f7436d805064d0564da324';
 var clientSecret = '9db0771e96094645ab8e228b4944ebb3';
 
+var getGiphy = function() {
+  var apiKey = "lMeCuGeeFgj0ElHn0XP950UPRWGyFOkm"
+
+  fetch("https://api.giphy.com/v1/gifs/random?api_key=" + apiKey + "&tag=scenery&rating=g&limit=1")
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      var giphy = data.data.images.downsized_medium.url
+        console.log(giphy);
+      })
+};
+
 var getGenre = function() {
   // FETCH REQUEST WITH clientId AND clientSecret 
   fetch("https://accounts.spotify.com/api/token", {
@@ -73,6 +86,8 @@ const getNewQuote = async () =>
     tweetButton.href="https://twitter.com/intent/tweet?text="+quote+" ~ "+auth;
 }
 getNewQuote();
+
+getGiphy();
 
 var song = "2up3OPMp9Tb4dAKM2erWXQ";
 
