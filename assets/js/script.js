@@ -13,6 +13,7 @@ var getGiphy = function() {
     .then(function(data) {
       var giphy = data.data.images.downsized_medium.url
         console.log(giphy);
+        $("#daily-quote-image").attr("src", giphy)
       })
 };
 
@@ -92,3 +93,7 @@ getGiphy();
 var song = "2up3OPMp9Tb4dAKM2erWXQ";
 
 $("#spotify").attr("src", "https://open.spotify.com/embed/album/" + song);
+
+
+
+
