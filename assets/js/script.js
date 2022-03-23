@@ -66,12 +66,16 @@ var getSong = function () {
           return response.json();
         })
         .then(function (playlist) {
-          console.log(playlist);
+          var random = playlist.playlists.items.length
+          var playlistNumber = Math.floor(Math.random() * random)
+          console.log(playlistNumber)
+          var songs = playlist.playlists.items[playlistNumber].uri.split(':')
+          $("#spotify").attr("src", "https://open.spotify.com/embed/playlist/" + songs[2]);
         });
     });
   });
 };
-getToken();
+
 
 // Quote Generator 
 const text=document.getElementById("quote");
@@ -116,13 +120,10 @@ var mainRun = function() {
   getNewQuote();
 
   getGiphy();
+
+  getToken();
 }
 
-
-
-var song = "2up3OPMp9Tb4dAKM2erWXQ";
-
-$("#spotify").attr("src", "https://open.spotify.com/embed/album/" + song);
 
 
 mainRun()
