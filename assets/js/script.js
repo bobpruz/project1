@@ -40,41 +40,32 @@ var getToken = function () {
         .then(function (genreList) {
           // CONSOLE.LOG ARRAY OF GENRES
           console.log(genreList);
-          getSong();
+          var random = genreList.categories.items.length;
+          var genreId = Math.floor(Math.random() * random)
+          var genre = genreList.categories.items[genreId].id
+          console.log(genre)
+          fetch(
+            `https://api.spotify.com/v1/browse/categories/${genre}/playlists?limit=50`,
+            {
+              method: "GET",
+              headers: { Authorization: "Bearer " + token.access_token },
+            }
+          )
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (playlist) {
+              var random = playlist.playlists.items.length
+              var playlistNumber = Math.floor(Math.random() * random)
+              console.log(playlistNumber)
+              var songs = playlist.playlists.items[playlistNumber].uri.split(':')
+              $("#spotify").attr("src", "https://open.spotify.com/embed/playlist/" + songs[2]);
+            });
         });
     });
   });
 };
-var getSong = function () {
-  fetch("https://accounts.spotify.com/api/token", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-      Authorization: "Basic " + btoa(clientId + ":" + clientSecret),
-    },
-    body: "grant_type=client_credentials",
-  }).then(function (response) {
-    response.json().then(function (token) {
-      fetch(
-        `https://api.spotify.com/v1/browse/categories/hiphop/playlists?limit=50`,
-        {
-          method: "GET",
-          headers: { Authorization: "Bearer " + token.access_token },
-        }
-      )
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (playlist) {
-          var random = playlist.playlists.items.length
-          var playlistNumber = Math.floor(Math.random() * random)
-          console.log(playlistNumber)
-          var songs = playlist.playlists.items[playlistNumber].uri.split(':')
-          $("#spotify").attr("src", "https://open.spotify.com/embed/playlist/" + songs[2]);
-        });
-    });
-  });
-};
+
 
 
 // Quote Generator 
