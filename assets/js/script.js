@@ -7,7 +7,7 @@ var getGiphy = function () {
   fetch(
     "https://api.giphy.com/v1/gifs/random?api_key=" +
       apiKey +
-      "&tag=scenery&rating=g&limit=1"
+      "&tag=nature&rating=g&limit=1"
   )
     .then(function (response) {
       return response.json();
@@ -31,7 +31,7 @@ var getPlaylist = function () {
   }).then(function (response) {
     response.json().then(function (token) {
       // FETCH genre
-      fetch(`https://api.spotify.com/v1/browse/categories?limit=50`, {
+      fetch(`https://api.spotify.com/v1/browse/categories?offset=4`, {
         method: "GET",
         headers: { Authorization: "Bearer " + token.access_token },
       })
@@ -39,6 +39,7 @@ var getPlaylist = function () {
           return genres.json();
         })
         .then(function (genreList) {
+          console.log(genreList)
           var random = genreList.categories.items.length;
           var genreId = Math.floor(Math.random() * random);
           var genre = genreList.categories.items[genreId].id;
@@ -101,10 +102,6 @@ const getNewQuote = async () => {
   //function to dynamically display the quote and the author
   text.innerHTML = quote;
   author.innerHTML = "~ " + auth;
-
-  //tweet the quote
-  tweetButton.href =
-    "https://twitter.com/intent/tweet?text=" + quote + " ~ " + auth;
 };
 
 // main application control

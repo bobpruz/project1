@@ -1,60 +1,76 @@
+/* general styling */
 .root {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Red Hat Display', sans-serif;
+  background: #9fBBA2;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .card-header {
   text-align: center;
+  background-color: #D6CB98;
+  text-shadow: 0.95px 0.95px #fff;
 }
 
 .card-body {
   text-align: center;
 }
 
+#header-card {
+  margin-top: 2vh;
+}
+
+h1 {
+  color: #e8d094;
+  font-weight: bold;
+  font-size: 5rem;
+  text-shadow: 0.75px 0.75px #000;
+}
+
 /* static quote card styling */
 #static-quote-container {
-  margin-top: 10.5vh;
-  /* margin-left: -10vw; */
+  margin-top: 5vh;
 }
 
 /* daily quote card styling */
 #daily-quote-container {
-  margin-top: 10.5vh;
+  margin-top: 5vh;
 }
 
-#refreshBtn {
-  margin-bottom: 2vh;
+#overlap {
+  position: relative;
+  text-align: center;
+  color: #000;
 }
 
-/* spotify player card styling */
-#spotify-player-container {
-  margin-top: 2vh;
+#quote-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
 }
 
-/* twitter button styling */
-.twitter {
-    border:1px solid rgb(102, 179, 255);
-    border-radius: 4px;
-    background-color: rgb(102, 179, 255);
-    color: white;
-    text-align: center;
-    font-size: 1.8em;
-    width: 60px;
-    height: 35px;
-    line-height: 40px;
+#daily-quote-image {
+  opacity: .5;
+  max-height: auto;
+  min-width: 100%;
 }
 
 .fa-quote-left, .fa-quote-right {
-  font-size: 35px;
+  font-size: 25px;
   color: rgb(0, 0, 0);
 }
 
 .quote {
   text-align: center;
-  font-size: 40px;
+  font-size: 33px;
   font-weight: bold;
 }
 
@@ -66,9 +82,47 @@ body {
     font-family: cursive;
 }
 
-.buttons {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+#quoteBtn {
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  background-color: #335A44;
+  color: #fff;
+}
+
+#quoteBtn:hover {
+  background-color: #B1C09F;
+  transition: .25s;
+  color: #000;
+}
+
+/* spotify player card styling */
+#spotify-player-container {
+  margin-top: 3.5vh;
+  width: 70%;
+  margin-inline: auto;
+}
+
+#spotify {
+  margin-top: 3.5vh;
+  border-radius: 10px;
+}
+
+.refreshBtn {
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  background-color: #335A44;
+  color: #fff;
+  width: 500px;
+}
+
+.refreshBtn:hover {
+  background-color: #B1C09F;
+  transition: .25s;
+  color: #000;
+}
+
+/* footer styling */
+footer {
+  text-align: center;
+  margin-top: 50px;
 }
