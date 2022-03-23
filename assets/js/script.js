@@ -17,8 +17,8 @@ var getGiphy = function() {
       })
 };
 
-var getGenre = function() {
-  // FETCH REQUEST WITH clientId AND clientSecret 
+var getToken = function () {
+  // FETCH REQUEST WITH clientId AND clientSecret
   fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
@@ -26,28 +26,52 @@ var getGenre = function() {
       Authorization: "Basic " + btoa(clientId + ":" + clientSecret),
     },
     body: "grant_type=client_credentials",
-  }).then(function(response) {
-    response.json().then(function(token) {
-      // FETCH available-genre-seeds ARRAY
-      fetch(
-        `https://api.spotify.com/v1/recommendations/available-genre-seeds`,
-        {
-          method: "GET",
-          headers: { Authorization: "Bearer " + token.access_token },
-        }
-      )
+  }).then(function (response) {
+    response.json().then(function (token) {
+      console.log(token);
+      // FETCH genre ARRAY
+      fetch(`https://api.spotify.com/v1/browse/categories?limit=50`, {
+        method: "GET",
+        headers: { Authorization: "Bearer " + token.access_token },
+      })
         .then(function (genres) {
           return genres.json();
         })
         .then(function (genreList) {
           // CONSOLE.LOG ARRAY OF GENRES
           console.log(genreList);
+          getSong();
         });
-    })
-  })
-}
-
-getGenre();
+    });
+  });
+};
+var getSong = function () {
+  fetch("https://accounts.spotify.com/api/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      Authorization: "Basic " + btoa(clientId + ":" + clientSecret),
+    },
+    body: "grant_type=client_credentials",
+  }).then(function (response) {
+    response.json().then(function (token) {
+      fetch(
+        `https://api.spotify.com/v1/browse/categories/hiphop/playlists?limit=50`,
+        {
+          method: "GET",
+          headers: { Authorization: "Bearer " + token.access_token },
+        }
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (playlist) {
+          console.log(playlist);
+        });
+    });
+  });
+};
+getToken();
 
 // Quote Generator 
 const text=document.getElementById("quote");
