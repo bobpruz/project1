@@ -30,7 +30,7 @@
       <!-- static quote card -->
       <aside id="static-quote-container" class="col-4">
         <div id="static-quote-card" class="card card-border-2 border-dark">
-          <h3 class="card-header">Static Quote</h3>
+
           <p class="card-body">"I deserve good things. I am entitled to my share of happiness. I refuse to beat myself up. I am an attractive person. I am fun to be with."<br>
             - Stuart Smalley.
           <img src="./assets/images/stuartsmalley.jpg" class="card-img-bottom" alt="SNL character Stuart Smalley">
@@ -42,20 +42,20 @@
         <div id="daily-quote-card" class="card card-border-2 border-dark">
           <!-- Quote to be Displayed Here -->
           <h2 class="card-header">Daily Quote</h2>
-          <i class="fas fa-quote-left"></i>
-            <span class="quote" id="quote"></span>
-            <i class="fas fa-quote-right"></i>
-            </h1>
-            <!-- Author to be Displayed Here -->
-            <p class="author" id="author"></p>
+          <div id="overlap">
+            <!-- GIPHY img displayed here -->
             <img id="daily-quote-image" src="" alt="inspirational scenery">
-
+            <div id="quote-container">
+              <i class="fas fa-quote-left"></i>
+                <span class="quote" id="quote"></span>
+                <i class="fas fa-quote-right"></i>
+                <!-- Author to be Displayed Here -->
+                <p class="author" id="author"></p>
+            </div>
+          </div>
           <!-- refresh button -->
-          <div class="buttons d-flex justify-content-space-between">
-            <!--Button to tweet the quote -->
-            <a class="twitter" id="tweet" href="https://twitter.com/intent/tweet?text=Greetings" data-size="large" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-
-            <button class="btn btn-warning border-dark" onclick="getNewQuote()">Not Feeling Inspired Enough? Click for More</button>
+          <div class="buttons d-flex justify-content-center">
+            <button id="quoteBtn" class="btn" onclick="getNewQuote(), getGiphy()">Not Feeling Inspired Enough? Click for More</button>
           </div>
         </div>
       </section>
@@ -63,16 +63,24 @@
       <!-- spotify player section -->
       <section id="spotify-player-container" class="col-12">
         <div id="spotify-player-card" class="card card-border-2 border-dark">
-          <h2 class="card-header">What's Your Song of the Day?</h2>
+          <h2 class="card-header">What's Your Playlist of the Day?</h2>
 
           <!-- genres/playlists dropdown menus -->
           <div class="d-flex flex-column">
-            <button class="refreshBtn btn btn-warning">Refresh Playlist</button>
-           <iframe id="spotify" src="" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <div class="d-flex justify-content-center">
+              <iframe id="spotify" src="" width="500" height="330" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button class="refreshBtn btn">Refresh Playlist</button>
+              </div>
           </div>
         </div>
       </section>
     </div>
+
+    <footer>
+      <img src="./assets/images/Poweredby_100px-White_VertText.png" alt="giphy attribute">
+    </footer>
   </main>
 
   <!-- jquery cdn -->
