@@ -86,14 +86,20 @@ const getNewQuote = async () =>
     //tweet the quote
     tweetButton.href="https://twitter.com/intent/tweet?text="+quote+" ~ "+auth;
 }
-getNewQuote();
 
-getGiphy();
+// main application control
+var mainRun = function() {
+  getNewQuote();
+
+  getGiphy();
+}
+
+
 
 var song = "2up3OPMp9Tb4dAKM2erWXQ";
 
 $("#spotify").attr("src", "https://open.spotify.com/embed/album/" + song);
 
 
-
+mainRun()
 
