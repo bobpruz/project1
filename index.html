@@ -66,25 +66,9 @@
           <h2 class="card-header">What's Your Song of the Day?</h2>
 
           <!-- genres/playlists dropdown menus -->
-          <div class="d-flex d-inline">
-            <div class="btn-group card-body col-2">
-              <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Genres
-              </button>
-              <div id="genres-menu" class="dropdown-menu">
-                
-              </div>
-            </div>
-
-            <div class="btn-group card-body col-2">
-              <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Playlists
-              </button>
-              <div id="genres-menu" class="dropdown-menu">
-                
-              </div>
-            </div>
-            <iframe id="spotify" src="" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <div class="d-flex flex-column">
+            <button class="refreshBtn btn btn-warning">Refresh Playlist</button>
+           <iframe id="spotify" src="" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           </div>
         </div>
       </section>
